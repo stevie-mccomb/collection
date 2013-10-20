@@ -1,5 +1,18 @@
 #!/usr/bin/env node
 
+/* ---- My Stuff ---- */
+
+var games = [];
+
+var express = require('express');
+var app = express();
+
+app.post('/data', function(req, res) {
+	games.push(req.body);
+});
+
+/* ---- End My Stuff ---- */
+
 var util = require('util'),
     http = require('http'),
     fs = require('fs'),
