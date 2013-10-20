@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Collection">
+<html lang="en" ng-app="Collection" ng-controller="GlobalCtrl">
 <head>
 	<meta charset="utf-8">
-	<title>My AngularJS App</title>
+	<title>The Collection v.{{ version }}</title>
 	<link rel="stylesheet" href="css/beauty.css" />
 	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="lib/linecons/css/linecons.css" />
@@ -10,27 +10,27 @@
 <body ng-controller="CollectionCtrl">
 
 	<header>
-		<h1>The Collection</h1>
+		<h1><a ng-href="#/">The Collection v.{{ version }}</a></h1>
 		<ul class="nav nav-pills">
-			<li><a ng-href="#">View</a></li>
-			<li><a ng-href="#">Add</a></li>
-			<li><a ng-href="#">Remove</a></li>
+			<li ng-class="{active: currentView == 'view'}"><a ng-href="#/">View</a></li>
+			<li ng-class="{active: currentView == 'add'}"><a ng-href="#/add">Add</a></li>
+			<li ng-class="{active: currentView == 'remove'}"><a ng-href="#/remove">Remove</a></li>
 		</ul>
 	</header>
 
-	<table class="collection table">
-		<tr class="headers"><th> </th><th>Name</th><th>Developer</th><th>Publisher</th><th>Year</th><th>Platform</th><th>Genre</th></tr>
-		<tr ng-repeat="game in games"><td><i class="linecon-pencil"></i></td><td>{{ game.name }}</td><td>{{ game.developer }}</td><td>{{ game.publisher }}</td><td>{{ game.year }}</td><td>{{ game.platform }}</td><td>{{ game.genre }}</td></tr>
-	</table>
+	<div ng-view></div>
 
 	<!-- In production use:
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	-->
-	<script src="lib/angular/angular.js"></script>
-	<script src="lib/angular/angular-route.js"></script>
-	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/angular/angular-route.min.js"></script>
+	<script src="lib/angular/angular-resource.min.js"></script>
+	<script src="lib/jquery/jquery-2.0.3.min.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers/global.js"></script>
 	<script src="js/controllers/app.js"></script>
 </body>
 </html>

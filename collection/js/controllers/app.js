@@ -1,30 +1,25 @@
-function CollectionCtrl($scope) {
-	$scope.games = {
-		"FFVII": {
-			"id": "001",
-			"name": "Final Fantasy VII",
-			"developer": "Squaresoft",
-			"publisher": "Squaresoft",
-			"year": "1997",
-			"platform": "Playstation",
-			"genre": "RPG",
-			"features": {
-				"players": "1",
-				"blackLabel": "Yes"
+function CollectionCtrl($scope, Games) {
+	$scope.setActive = function(linkName) {
+		$scope.currentView = linkName;
+	}
+
+	$scope.games = Games.query();
+	$scope.newGame = {};
+
+	$scope.addGame = function() {
+		Games.save($scope.newGame, function(data) {
+			$scope.games.push($scope.newGame);
+		});
+	}
+
+	$scope.removeGame = function(chosen) {
+		var chosenID = chosen.game.id;
+		Games.save($scope.chosen, function(data) {
+			for (var i = 0; i < $scope.games.length; ++i) {
+				if ($scope.games[i].id == chosenID) {
+					$scope.games.splice(i, 1);
+				}
 			}
-		},
-		"SPFIIT": {
-			"id": "002",
-			"name": "Super Puzzle Fighter II Turbo",
-			"developer": "Capcom",
-			"publisher": "Capcom",
-			"year": "1997",
-			"platform": "Playstation",
-			"genre": "Puzzle",
-			"features": {
-				"players": "2",
-				"blackLabel": "Yes"
-			}
-		}
+		});
 	}
 }

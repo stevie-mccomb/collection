@@ -1,0 +1,16 @@
+<div class="well">
+	<h2>Remove a Game</h2>
+	<form class="form-search">
+		<div class="controls">
+			<input ng-model="search" class="search-query" type="text" placeholder="Search" />
+			<button class="btn" type="button">Search</button>
+		</div>
+	</form>
+
+	<div class="well well-white">
+		<table class="table">
+			<tr class="headers"><th>Name</th><th>Developer</th><th>Publisher</th><th>Year</th><th>Platform</th><th>Genre</th></tr>
+			<tr ng-repeat="game in games | filter:search" ng-click="removeGame(this)" data-dash="yo"><td>{{ game.name }}</td><td>{{ game.developer }}</td><td>{{ game.publisher }}</td><td>{{ game.year }}</td><td>{{ game.platform }}</td><td>{{ game.genre }}</td></tr>
+		</table>
+	</div>
+</div>

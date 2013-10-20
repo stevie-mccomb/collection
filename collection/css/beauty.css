@@ -10,6 +10,24 @@ i {
 	font-size: 1.5em;
 }
 
+.well {
+	width: 80%;
+	margin: 20px auto;
+}
+
+.well h2, .well form {
+	text-align: center;
+}
+
+.well h2 {
+	margin-bottom: 20px;
+}
+
+.well-white {
+	width: 90%;
+	background: #fff !important;
+}
+
 /* ---- Header Styles ---- */
 
 header {
@@ -26,6 +44,15 @@ header h1 {
 	margin-left: 20px;
 	line-height: 3;
 	position: absolute;
+}
+
+header h1 a {
+	color: #fff;
+}
+
+header h1 a:hover {
+	color: #fff;
+	text-decoration: none;
 }
 
 header .nav {
@@ -51,17 +78,17 @@ header .nav li a:hover {
 	background: #0af;
 }
 
-/* ---- Collection Styles ---- */
+/* ---- Table Styles ---- */
 
-.collection {
+.table {
 	margin-top: 10px;
 }
 
-.collection tr:first-child th {
+.table tr:first-child th {
 	border-top: 0;
 }
 
-.collection tr:not(.headers):hover {
+.table tr:not(.headers):hover {
 	cursor: pointer;
 	color: #fff;
 	background: #0af;

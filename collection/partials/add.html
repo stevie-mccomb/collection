@@ -1,0 +1,33 @@
+<div class="well">
+	<h2>Add a Game</h2>
+	<form class="form-horizontal">
+		<!-- Name -->
+		<div class="control-group">
+			<input type="text" placeholder="Name" ng-model="newGame.name">
+		</div>
+		<!-- Developer -->
+		<div class="control-group">
+			<input type="text" placeholder="Developer" ng-model="newGame.developer">
+		</div>
+		<!-- Publisher -->
+		<div class="control-group">
+			<input type="text" placeholder="Publisher" ng-model="newGame.publisher">
+		</div>
+		<!-- Year -->
+		<div class="control-group">
+			<input type="text" placeholder="Year" ng-model="newGame.year">
+		</div>
+		<!-- Platform -->
+		<div class="control-group">
+			<input type="text" placeholder="Platform" ng-model="newGame.platform">
+		</div>
+		<!-- Genre -->
+		<div class="control-group">
+			<input type="text" placeholder="Genre" ng-model="newGame.genre">
+		</div>
+		<!-- Button -->
+		<div class="control-group">
+			<button class="btn btn-primary" type="button" ng-click="addGame()">Add</button>
+		</div>
+	</form>
+</div>
